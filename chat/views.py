@@ -4,7 +4,7 @@ from .models import PromptResponse
 from .serializers import PostPromptResponseSerializer, PromptResponseSerializer
 
 
-class PromtResponseAPIView(generics.ListCreateAPIView):
+class PromptResponseAPIView(generics.ListCreateAPIView):
     queryset = PromptResponse.objects.all()
     serializer_class = PromptResponseSerializer
 

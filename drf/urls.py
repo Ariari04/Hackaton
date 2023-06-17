@@ -25,4 +25,5 @@ urlpatterns = [
         include("django_rest_passwordreset.urls", namespace="password_reset"),
     ),
     path("api/chat/", include("chat.urls")),
+    path("api/API/", include("API.urls")),
 ]

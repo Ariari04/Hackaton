@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django_rest_passwordreset",
     "corsheaders",
     "chat.apps.ChatConfig",
+    "API",
 ]
 
 MIDDLEWARE = [

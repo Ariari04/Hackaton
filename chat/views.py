@@ -1,7 +1,7 @@
 from rest_framework import generics
 
 from .models import PromptResponse
-from .serializers import PostPromptResponseSerializer, PromptResponseSerializer
+from .serializers import PromptResponseSerializer
 
 
 class PromptResponseAPIView(generics.ListCreateAPIView):
@@ -12,3 +12,4 @@ class PromptResponseAPIView(generics.ListCreateAPIView):
 class DetailPromptResponse(generics.RetrieveUpdateDestroyAPIView):
     queryset = PromptResponse.objects.all()
     serializer_class = PromptResponseSerializer
+

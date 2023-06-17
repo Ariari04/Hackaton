@@ -7,9 +7,3 @@ class PromptResponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = PromptResponse
         fields = ("id", "prompt", "response")
-
-
-class PostPromptResponseSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PromptResponse
-        fields = ("id", "prompt", "response")

@@ -41,7 +41,25 @@ class InstituteEvent(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True, default='')
     organizer = models.ForeignKey('Institute', on_delete=models.CASCADE)
-    created_date = models.DateTimeField(auto_created=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
+RATING = ((1, 1),
+          (2, 2),
+          (3, 3),
+          (4, 4),
+          (5, 5),)
+
+
+class Review(models.Model):
+    title = models.CharField(max_length=100, blank=True, default='')
+    body = models.TextField(blank=True, default='')
+    rating = models.IntegerField(choices=RATING)
+    related_to = models.ForeignKey('Institute', on_delete=models.CASCADE)
+    created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

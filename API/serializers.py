@@ -1,17 +1,5 @@
 from rest_framework import serializers
-from .models import Document, ServiceCategory, Institute, InstituteEvent, Review
-
-
-class DocumentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Document
-        fields = '__all__'
-
-
-class ServiceCategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ServiceCategory
-        fields = '__all__'
+from .models import Institute, InstituteEvent, Review
 
 
 class InstituteSerializer(serializers.ModelSerializer):

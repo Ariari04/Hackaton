@@ -1,16 +1,30 @@
 from django.contrib.auth import login
-
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
-
-from rest_framework import generics, permissions
-from rest_framework.decorators import api_view
 from knox.models import AuthToken
-from rest_framework.exceptions import PermissionDenied
-
 from .serializers import UserSerializer, RegisterSerializer, ChangePasswordSerializer
+from rest_framework import generics, permissions
+from rest_framework.generics import RetrieveAPIView, UpdateAPIView
+from rest_framework.permissions import IsAuthenticated
+from .models import Profile
+from .serializers import ProfileSerializer
 
-from rest_framework.views import APIView
+class ProfileDetailAPIView(RetrieveAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user.profile
+
+class ProfileUpdateAPIView(UpdateAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user.profile
+
 
 
 # Register API

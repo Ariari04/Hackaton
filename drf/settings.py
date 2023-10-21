@@ -24,7 +24,15 @@ SECRET_KEY = "!)hg!lyuffgs6&)_42()1k0z+$)(8+z0wgxv&$cilgd8f8&2%c"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.134.64"]
+ALLOWED_HOSTS = [
+    "orenvadi.pythonanywhere.com",
+    "192.168.45.234",
+    "127.0.0.1",
+    "192.168.108.191",
+    "localhost",
+    "192.168.108.234",
+    "192.168.88.71",
+]
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
 
@@ -46,6 +54,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "chat.apps.ChatConfig",
     "API",
+    'drf_yasg',
 ]
 
 #AUTH_USER_MODEL = "API.CustomUser"
